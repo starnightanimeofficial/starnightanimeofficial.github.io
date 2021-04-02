@@ -1,0 +1,6 @@
+ffmpeg -i "4.mkv" -vn -an -codec:s:1 srt subtitle.srt
+
+ffmpeg -i 4.mkv -vf subtitles="4.mkv:si=1:force_style='Fontname=DejaVu Serif,PrimaryColour=&HCCFF0000" 4.mp4
+
+ffmpeg -i 4.mkv -map s:1 -c:s copy asd.srt
+ffmpeg -i asd.srt asd.vtt
